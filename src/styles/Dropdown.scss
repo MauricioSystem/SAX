@@ -1,0 +1,90 @@
+@use './variables.scss' as *;
+
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+
+    &:hover {
+      background-color: rgba(227, 30, 36, 0.1);
+      border-color: $red-primary;
+    }
+
+    .dropdown-arrow {
+      width: 1rem;
+      height: 1rem;
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .dropdown-content {
+    position: fixed;
+    min-width: 150px;
+    border-radius: 4px;
+    border: 1px solid currentColor;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    overflow: hidden;
+
+    // Dark background for dropdown menu
+    body.dark & {
+      background-color: $navy-deep;
+      border-color: $blue-gray;
+    }
+
+    body.light & {
+      background-color: $white-warm;
+      border-color: $gray-soft;
+    }
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+
+    &:hover {
+      background-color: rgba(227, 30, 36, 0.1);
+      color: $red-primary;
+    }
+
+    &.active {
+      background-color: rgba(227, 30, 36, 0.2);
+      color: $red-primary;
+      font-weight: 600;
+    }
+
+    &:first-child {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+}

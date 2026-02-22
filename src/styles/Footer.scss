@@ -1,0 +1,145 @@
+@use './variables.scss' as *;
+
+.footer {
+  width: 100%;
+  padding: 3rem 2rem;
+  margin-top: auto;
+  transition: all 0.3s ease;
+  background-color: $blue-black;
+  color: $white-warm;
+  border-top: 2px solid $blue-gray;
+
+  .footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+
+    .footer-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: $red-primary;
+    }
+
+    .footer-info {
+      line-height: 1.8;
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      .footer-company {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-email {
+        color: $red-primary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $red-darker;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      border: 2px solid $blue-gray;
+      transition: all 0.3s ease;
+      background-color: rgba(227, 30, 36, 0.1);
+      padding: 8px;
+
+      &:hover {
+        background-color: $red-primary;
+        border-color: $red-primary;
+        transform: scale(1.1);
+      }
+
+      .social-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-social {
+      justify-content: center;
+      gap: 1rem;
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+
+        .social-icon {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+
+    .footer-section {
+      .footer-title {
+        font-size: 1.25rem;
+      }
+
+      .footer-info {
+        font-size: 0.9rem;
+      }
+    }
+
+    .footer-social {
+      gap: 0.75rem;
+
+      .social-link {
+        width: 45px;
+        height: 45px;
+
+        .social-icon {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}
