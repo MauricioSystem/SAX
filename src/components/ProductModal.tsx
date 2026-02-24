@@ -32,7 +32,7 @@ const ProductModal = ({ product, images, isOpen, onClose }: ProductModalProps) =
 
   useEffect(() => {
     if (isOpen) {
-      setCurrentImageIndex(0); // Reset to first image when modal opens
+      setCurrentImageIndex(0); 
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -49,14 +49,14 @@ const ProductModal = ({ product, images, isOpen, onClose }: ProductModalProps) =
     let message = '';
     
     if (language === 'es') {
-      message = `Hola, quiero mas informacion de este producto "${product.name}"`;
+      message = `Solicito mas informacion de este producto ${product.name}`;
     } else if (language === 'en') {
-      message = `Hello, I want more information about this product "${product.name}"`;
+      message = `I request more information about this product ${product.name}`;
     } else {
-      message = `Bonjour, je veux plus d'informations sur ce produit "${product.name}"`;
+      message = `Je demande plus d'informations sur ce produit ${product.name}`;
     }
     
-    const whatsappUrl = `https://wa.me/59133317201?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/59171677149?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

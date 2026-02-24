@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://sax.com.bo/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sax.com.bo/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sax.com.bo/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sax.com.bo/?lang=fr" />
+  </url>
+  <url>
+    <loc>https://sax.com.bo/quienes-somos</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sax.com.bo/quienes-somos?lang=es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sax.com.bo/quienes-somos?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sax.com.bo/quienes-somos?lang=fr" />
+  </url>
+  <url>
+    <loc>https://sax.com.bo/productos</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sax.com.bo/productos?lang=es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sax.com.bo/productos?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sax.com.bo/productos?lang=fr" />
+  </url>
+  <url>
+    <loc>https://sax.com.bo/contactenos</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://sax.com.bo/contactenos?lang=es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sax.com.bo/contactenos?lang=en" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sax.com.bo/contactenos?lang=fr" />
+  </url>
+</urlset>

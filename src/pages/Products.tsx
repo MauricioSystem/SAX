@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useLanguage } from '../utils/LanguageContext';
+import SEO from '../components/SEO';
 import CategoryFilter from '../components/ui/CategoryFilter';
 import SearchInput from '../components/ui/SearchInput';
 import ProductModal from '../components/ProductModal';
@@ -42,7 +43,7 @@ const productImages: Record<number, string[]> = {
 };
 
 const Products = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -76,8 +77,28 @@ const Products = () => {
     ? products.find((p) => p.id === selectedProduct)
     : null;
 
+  const baseUrl = 'https://sax.com.bo';
+  const pageUrl = `${baseUrl}/productos`;
+  const ogImage = `${baseUrl}/favicon.png`;
+
   return (
     <div className="products-page">
+      <SEO
+        title={language === 'es'
+          ? 'Productos Viales - SAX Bolivia'
+          : language === 'en'
+          ? 'Road Products - SAX Bolivia'
+          : 'Produits Routiers - SAX Bolivia'}
+        description={language === 'es'
+          ? 'Catálogo completo de productos viales: conos de tráfico, barreras, resaltos, topes de estacionamiento y más. Calidad garantizada.'
+          : language === 'en'
+          ? 'Complete catalog of road products: traffic cones, barriers, speed bumps, parking stops and more. Guaranteed quality.'
+          : 'Catalogue complet de produits routiers : cônes de signalisation, barrières, ralentisseurs, butées de stationnement et plus encore. Qualité garantie.'}
+        keywords="productos viales, conos tráfico, barreras viales, resaltos viales, topes estacionamiento, señalización vial"
+        ogImage={ogImage}
+        ogUrl={pageUrl}
+        canonicalUrl={pageUrl}
+      />
       <div className="products-container">
         <div className="products-filters">
           <CategoryFilter

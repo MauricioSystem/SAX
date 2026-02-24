@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../utils/LanguageContext';
+import SEO from '../components/SEO';
 import imglista1 from '../assets/imglista1.png';
 import imglista2 from '../assets/imglista2.png';
 import imglista3 from '../assets/imglista3.png';
@@ -10,7 +11,7 @@ import '../styles/Home.scss';
 
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const images = [
     imglista1,
@@ -40,8 +41,23 @@ const Home = () => {
     );
   };
 
+  const baseUrl = 'https://sax.com.bo';
+  const ogImage = `${baseUrl}/favicon.png`;
+
   return (
     <div className="home">
+      <SEO
+        title={language === 'es' 
+          ? 'SAX Bolivia - Productos Viales y Señalización' 
+          : language === 'en'
+          ? 'SAX Bolivia - Road Products and Signage'
+          : 'SAX Bolivia - Produits Routiers et Signalisation'}
+        description={t.home.description}
+        keywords="productos viales, señalización vial, conos de tráfico, barreras viales, resaltos viales, topes estacionamiento, Bolivia, SAX"
+        ogImage={ogImage}
+        ogUrl={baseUrl}
+        canonicalUrl={baseUrl}
+      />
       <div className="image-gallery">
         {images.map((img, index) => (
           <div

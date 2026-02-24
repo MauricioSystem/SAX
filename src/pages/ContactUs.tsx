@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useLanguage } from '../utils/LanguageContext';
+import SEO from '../components/SEO';
 import Captcha from '../components/ui/Captcha';
 import '../styles/ContactUs.scss';
 
 const ContactUs = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -114,8 +115,28 @@ Fecha: ${new Date().toLocaleString('es-BO', { timeZone: 'America/La_Paz' })}
     }
   };
 
+  const baseUrl = 'https://sax.com.bo';
+  const pageUrl = `${baseUrl}/contactenos`;
+  const ogImage = `${baseUrl}/favicon.png`;
+
   return (
     <div className="contact-us">
+      <SEO
+        title={language === 'es'
+          ? 'Contáctenos - SAX Bolivia'
+          : language === 'en'
+          ? 'Contact Us - SAX Bolivia'
+          : 'Contactez-nous - SAX Bolivia'}
+        description={language === 'es'
+          ? 'Contáctenos para más información sobre nuestros productos viales. Estamos aquí para ayudarte.'
+          : language === 'en'
+          ? 'Contact us for more information about our road products. We are here to help you.'
+          : 'Contactez-nous pour plus d\'informations sur nos produits routiers. Nous sommes là pour vous aider.'}
+        keywords="contacto SAX Bolivia, información productos viales, consultas"
+        ogImage={ogImage}
+        ogUrl={pageUrl}
+        canonicalUrl={pageUrl}
+      />
       <div className="contact-container">
         <div className="contact-header">
           <h1 className="contact-title">{t.contact.title}</h1>

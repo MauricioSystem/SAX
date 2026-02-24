@@ -18,6 +18,9 @@
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-end;
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: 200px;
 
     .filter-group {
       display: flex;
@@ -37,7 +40,7 @@
 
       .filter-label {
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         color: inherit;
         text-transform: uppercase;
         letter-spacing: 0.5px;
@@ -60,7 +63,7 @@
           padding: 0.75rem 1rem 0.75rem 3rem;
           border-radius: 8px;
           border: 1px solid;
-          font-size: 1rem;
+          font-size: 0.85rem;
           transition: all 0.3s ease;
           font-family: inherit;
 
@@ -103,7 +106,9 @@
   .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
 
     .product-card {
       cursor: pointer;
@@ -143,23 +148,28 @@
 
       .card-image {
         width: 100%;
-        height: 250px;
+        height: 180px;
         overflow: hidden;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
 
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
+          object-position: center;
           transition: transform 0.3s ease;
         }
       }
 
       .card-content {
-        padding: 1.5rem;
+        padding: 1rem;
 
         .card-name {
-          font-size: 1.25rem;
+          font-size: 1rem;
           font-weight: 600;
           margin: 0;
           color: inherit;
@@ -194,6 +204,9 @@
     .products-filters {
       flex-direction: column;
       gap: 1.5rem;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
 
       .filter-group {
         min-width: 100%;
@@ -220,7 +233,8 @@
           img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
           }
         }
 
