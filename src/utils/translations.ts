@@ -6,6 +6,13 @@ export interface Translations {
     quienesSomos: string;
     productos: string;
     contactenos: string;
+    languageLabel: string;
+    themeLabel: string;
+    themeClaroLabel: string;
+    themeOscuroLabel: string;
+    contactTitle: string;
+    phoneLabel: string;
+    emailLabel: string;
   };
   home: {
     description: string;
@@ -84,9 +91,16 @@ export const translations: Record<Language, Translations> = {
   es: {
     nav: {
       inicio: 'Inicio',
-      quienesSomos: 'Quienes Somos',
+      quienesSomos: 'Información',
       productos: 'Productos',
-      contactenos: 'Contáctenos',
+      contactenos: 'Abogados',
+      languageLabel: 'Idioma',
+      themeLabel: 'Tema',
+      themeClaroLabel: '☀️',
+      themeOscuroLabel: '🌙',
+      contactTitle: 'Contacto principal',
+      phoneLabel: 'Teléfono',
+      emailLabel: 'Correo',
     },
     home: {
       description: `Somos una empresa que está dedicada a soluciones y servicios en diferentes áreas como ser: productos de señalización, seguridad vial, Comercialización o ventas de Lamparas Led (Asia),equipos de oficina y maquinaria pesada. Exportación y Comercialización de Minerales certificado de registro fitosanitario; importación de productos de origen vegetal (granos), es emitido por el senasag; SAX cuenta con nexos comerciales en todo el territorio boliviano.  Es por esto que se trabaja en diferentes tipos de proyectos así como en licitaciones públicas y privadas a nivel nacional e internacional.
@@ -223,9 +237,16 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA)y de
   en: {
     nav: {
       inicio: 'Home',
-      quienesSomos: 'About Us',
+      quienesSomos: 'Information',
       productos: 'Products',
-      contactenos: 'Contact Us',
+      contactenos: 'Lawyers',
+      languageLabel: 'Language',
+      themeLabel: 'Theme',
+      themeClaroLabel: '☀️',
+      themeOscuroLabel: '🌙',
+      contactTitle: 'Main Contact',
+      phoneLabel: 'Phone',
+      emailLabel: 'Email',
     },
     home: {
       description: `We are a company dedicated to solutions and services in different areas such as: signaling products, road safety, Commercialization or sales of Led Lamps (Asia), office equipment and heavy machinery. Export and Commercialization of Minerals with phytosanitary registration certificate; import of products of vegetable origin (grains), is issued by senasag; SAX has commercial links throughout the Bolivian territory. This is why we work on different types of projects as well as public and private tenders at the national and international level.
@@ -362,9 +383,16 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
   fr: {
     nav: {
       inicio: 'Accueil',
-      quienesSomos: 'À Propos',
+      quienesSomos: 'Informations',
       productos: 'Produits',
-      contactenos: 'Contactez-nous',
+      contactenos: 'Avocats',
+      languageLabel: 'Langue',
+      themeLabel: 'Thème',
+      themeClaroLabel: '☀️',
+      themeOscuroLabel: '🌙',
+      contactTitle: 'Contact principal',
+      phoneLabel: 'Téléphone',
+      emailLabel: 'E-mail',
     },
     home: {
       description: `Nous sommes une entreprise dédiée aux solutions et services dans différents domaines tels que: produits de signalisation, sécurité routière, Commercialisation ou vente de Lampes Led (Asie), équipements de bureau et machinerie lourde. Exportation et Commercialisation de Minéraux avec certificat d'enregistrement phytosanitaire; importation de produits d'origine végétale (grains), est émis par le senasag; SAX a des liens commerciaux sur tout le territoire bolivien. C'est pourquoi nous travaillons sur différents types de projets ainsi que sur des appels d'offres publics et privés au niveau national et international.

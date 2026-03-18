@@ -48,10 +48,10 @@ const Home = () => {
     <div className="home">
       <SEO
         title={language === 'es' 
-          ? 'SAX Bolivia - Productos Viales y Señalización' 
+          ? 'SAX Bolivia' 
           : language === 'en'
-          ? 'SAX Bolivia - Road Products and Signage'
-          : 'SAX Bolivia - Produits Routiers et Signalisation'}
+          ? 'SAX Bolivia'
+          : 'SAX Bolivia'}
         description={t.home.description}
         keywords="productos viales, señalización vial, conos de tráfico, barreras viales, resaltos viales, topes estacionamiento, Bolivia, SAX"
         ogImage={ogImage}

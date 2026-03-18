@@ -1,197 +1,286 @@
 @use './variables.scss' as *;
 
-.navbar {
-  position: sticky;
+/* Header superior fijo */
+.site-header {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  height: 88px;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-bottom: 2px solid $blue-gray;
+
+  background-color: $navy-deep;
+  color: $white-warm;
+}
+
+.site-header.light {
+  background-color: $white-warm;
+  color: $navy-deep;
+  border-bottom-color: $gray-soft;
+}
+
+.site-header-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Nav lateral (sidebar) válido para desktop y móviles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px;
   z-index: 1000;
-  width: 100%;
-  padding: 1rem 2rem;
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background-color: $navy-deep;
+  color: $white-warm;
+  border-right: 2px solid $blue-gray;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.6);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
 
-  @media (max-width: 768px) {
-    max-height: 500px;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+.sidebar.dark {
+  background-color: $navy-deep;
+  color: $white-warm;
+  border-right: 2px solid $blue-gray;
+}
 
-    &.collapsed {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
+.sidebar.light {
+  background-color: $white-warm;
+  color: $navy-deep;
+  border-right: 2px solid $gray-soft;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5rem;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+  .logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
   }
+}
 
-  &.dark {
-    background-color: $navy-deep;
-    color: $white-warm;
-    border-bottom: 2px solid $blue-gray;
-  }
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex: 1; /* empuja controles y contacto hacia abajo */
 
-  &.light {
-    background-color: $white-warm;
-    color: $navy-deep;
-    border-bottom: 2px solid $gray-soft;
-  }
+  .sidebar-link {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: all 0.2s ease;
 
-  .navbar-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .navbar-left {
-    flex-shrink: 0;
-
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-
-      .logo-img {
-        height: 84px;
-        width: auto;
-        object-fit: contain;
-      }
-    }
-  }
-
-  .navbar-center {
-    display: flex;
-    gap: 2rem;
-    flex: 1;
-    justify-content: center;
-
-    .nav-link {
-      color: inherit;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: rgba(227, 30, 36, 0.1);
-        color: $red-primary;
-      }
-    }
-  }
-
-  .navbar-right {
-    flex-shrink: 0;
-
-    .navbar-controls {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-
-    .theme-toggle {
-      background-color: transparent;
-      border: 1px solid currentColor;
-      color: inherit;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: rgba(227, 30, 36, 0.1);
-        border-color: $red-primary;
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-
-    .navbar-container {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .navbar-left {
-      .navbar-logo {
-        .logo-img {
-          height: 60px;
-        }
-      }
-    }
-
-    .navbar-center {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    padding: 0.75rem;
-
-    .navbar-left {
-      .navbar-logo {
-        .logo-img {
-          height: 50px;
-        }
-      }
+    &:hover {
+      background-color: rgba(148, 163, 184, 0.16);
+      color: $red-primary;
     }
   }
 }
 
-.navbar-toggle-mobile {
-  display: none;
+.sidebar-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0;
 
-  @media (max-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0.75rem;
-    background-color: inherit;
-    border: none;
-    border-top: 1px solid;
+  .theme-toggle {
+    background-color: transparent;
+    border: 1px solid currentColor;
+    color: inherit;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    margin-top: 0;
+    font-size: 1.1rem;
+    transition: all 0.2s ease;
 
-    body.dark & {
-      background-color: $navy-deep;
-      border-top-color: $blue-gray;
-      color: $white-warm;
-
-      &:hover {
-        background-color: $blue-base;
-      }
-
-      &:active {
-        background-color: $blue-base;
-      }
+    &:hover {
+      background-color: rgba(227, 30, 36, 0.1);
+      border-color: $red-primary;
+      transform: scale(1.05);
     }
+  }
+}
 
-    body.light & {
-      background-color: $white-warm;
-      border-top-color: $gray-soft;
-      color: $navy-deep;
+.sidebar-contact {
+  margin-top: 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
 
-      &:hover {
-        background-color: $gray-light;
-      }
+  .contact-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
 
-      &:active {
-        background-color: $gray-light;
-      }
-    }
+  .contact-item {
+    opacity: 0.9;
+  }
+}
 
-    &:active {
-      transform: scale(0.98);
-    }
+/* Idioma dropdown (siempre visible encima del sidebar) */
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-trigger {
+  background-color: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  color: inherit;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(148, 163, 184, 0.12);
+  }
+}
+
+.lang-trigger .open {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20000;
+  min-width: 160px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.sidebar.dark .lang-menu {
+  background-color: $navy-deep;
+  border-color: $blue-gray;
+}
+
+.sidebar.light .lang-menu {
+  background-color: $white-warm;
+  border-color: $gray-soft;
+}
+
+.lang-item {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(227, 30, 36, 0.1);
+    color: $red-primary;
+  }
+
+  &.active {
+    background-color: rgba(227, 30, 36, 0.2);
+    color: $red-primary;
+    font-weight: 600;
+  }
+}
+
+.sidebar.sidebar-open-mobile {
+  transform: translateX(0);
+}
+
+/* Overlay para cerrar el nav al tocar fuera */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  background: transparent;
+}
+
+/* Botón flotante para abrir el nav (desktop y móviles, siempre overlay) */
+.sidebar-toggle-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  background-color: rgba(15, 23, 42, 0.9);
+  color: $white-warm;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $blue-base;
+  }
+}
+
+body.light .sidebar-toggle-mobile {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: $navy-deep;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 72px;
+  }
+
+  .sidebar-toggle-mobile {
+    top: 1rem;
+  }
+
+  .site-header-logo {
+    height: 48px;
   }
 }

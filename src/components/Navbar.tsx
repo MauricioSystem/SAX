@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { ChevronUp, ChevronDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ChevronDown, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../utils/ThemeContext';
 import { useLanguage } from '../utils/LanguageContext';
-import { DropdownMenu, DropdownMenuItem } from './ui/dropdown-menu';
 import logoblanco from '../assets/logoblanco.png';
 import logooscuro from '../assets/logooscuro.png';
 import '../styles/Navbar.scss';
@@ -11,7 +10,7 @@ import '../styles/Navbar.scss';
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const languages = [
     { code: 'es' as const, label: 'Español' },
@@ -19,65 +18,144 @@ const Navbar = () => {
     { code: 'fr' as const, label: 'Français' },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.code === language) || languages[0];
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const langDropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!isLangOpen) return;
+
+    const handleMouseDown = (event: MouseEvent) => {
+      const el = langDropdownRef.current;
+      if (!el) return;
+      if (!el.contains(event.target as Node)) setIsLangOpen(false);
+    };
+
+    document.addEventListener('mousedown', handleMouseDown);
+    return () => document.removeEventListener('mousedown', handleMouseDown);
+  }, [isLangOpen]);
+
+  const handleCloseSidebar = () => {
+    setIsMobileOpen(false);
+  };
 
   return (
     <>
-      <nav className={`navbar ${theme} ${isCollapsed ? 'collapsed' : ''}`}>
-        <div className="navbar-container">
-          <div className="navbar-left">
-            <Link to="/" className="navbar-logo">
-              <img 
-                src={theme === 'dark' ? logooscuro : logoblanco} 
-                alt="SAX Logo" 
-                className="logo-img" 
+      <header
+        className={`site-header ${theme}`}
+        aria-label="SAX header"
+      >
+        <Link to="/" className="site-header-link" onClick={handleCloseSidebar}>
+          <img
+            src={theme === 'dark' ? logooscuro : logoblanco}
+            alt="SAX Logo"
+            className="site-header-logo"
+          />
+        </Link>
+      </header>
+
+      <aside
+        className={`sidebar ${theme} ${isMobileOpen ? 'sidebar-open-mobile' : ''}`}
+      >
+        <div className="sidebar-inner">
+          {/* Logo */}
+          <div className="sidebar-logo">
+            <Link to="/" onClick={handleCloseSidebar}>
+              <img
+                src={theme === 'dark' ? logooscuro : logoblanco}
+                alt="SAX Logo"
+                className="logo-img"
               />
             </Link>
           </div>
 
-          <div className="navbar-center">
-            <Link to="/" className="nav-link">
+          {/* Navegación principal */}
+          <nav className="sidebar-nav">
+            <Link to="/" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.inicio}
             </Link>
-            <Link to="/quienes-somos" className="nav-link">
-              {t.nav.quienesSomos}
-            </Link>
-            <Link to="/productos" className="nav-link">
+            <Link to="/productos" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.productos}
             </Link>
-            <Link to="/contactenos" className="nav-link">
+            <Link to="/quienes-somos" className="sidebar-link" onClick={handleCloseSidebar}>
+              {t.nav.quienesSomos}
+            </Link>
+            <Link to="/contactenos" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.contactenos}
             </Link>
+          </nav>
+
+          {/* Idioma y tema */}
+          <div className="sidebar-controls">
+            <div className="lang-dropdown" ref={langDropdownRef}>
+              <button
+                type="button"
+                className="lang-trigger"
+                aria-expanded={isLangOpen}
+                onClick={() => setIsLangOpen((prev) => !prev)}
+              >
+                <span>{t.nav.languageLabel}</span>
+                <ChevronDown size={16} className={isLangOpen ? 'open' : ''} />
+              </button>
+
+              {isLangOpen && (
+                <div className="lang-menu" role="menu">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      role="menuitem"
+                      className={`lang-item ${language === lang.code ? 'active' : ''}`}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setIsLangOpen(false);
+                      }}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <button className="theme-toggle" onClick={toggleTheme} type="button">
+              {t.nav.themeLabel}: {theme === 'dark' ? t.nav.themeOscuroLabel : t.nav.themeClaroLabel}
+            </button>
           </div>
 
-          <div className="navbar-right">
-            <div className="navbar-controls">
-              <DropdownMenu trigger={<span>{currentLanguage.label}</span>}>
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    active={language === lang.code}
-                    onClick={() => setLanguage(lang.code)}
-                  >
-                    {lang.label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenu>
-
-              <button className="theme-toggle" onClick={toggleTheme}>
-                {theme === 'dark' ? '☀️' : '🌙'}
-              </button>
-            </div>
+          {/* Contacto principal */}
+          <div className="sidebar-contact">
+            <span className="contact-title">{t.nav.contactTitle}</span>
+            <span className="contact-item">
+              {t.nav.phoneLabel}: +519 78646205
+            </span>
+            <span className="contact-item">
+              {t.nav.emailLabel}: comercial@sax.com.bo
+            </span>
           </div>
         </div>
-      </nav>
-      <button
-        className="navbar-toggle-mobile"
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        aria-label={isCollapsed ? 'Mostrar menú' : 'Ocultar menú'}
-      >
-        {isCollapsed ? <ChevronDown size={24} /> : <ChevronUp size={24} />}
-      </button>
+      </aside>
+
+      {/* Overlay para cerrar el nav al tocar fuera */}
+      {isMobileOpen && (
+        <button
+          type="button"
+          className="sidebar-overlay"
+          aria-label="Cerrar navegación"
+          onClick={() => setIsMobileOpen(false)}
+        />
+      )}
+
+      {/* Botón de 3 rayas para abrir el nav cuando está cerrado */}
+      {!isMobileOpen && (
+        <button
+          type="button"
+          className="sidebar-toggle-mobile"
+          onClick={() => setIsMobileOpen(true)}
+          aria-label="Abrir navegación"
+        >
+          <Menu size={22} />
+        </button>
+      )}
     </>
   );
 };

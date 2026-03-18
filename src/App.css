@@ -8,4 +8,13 @@
   flex: 1;
   width: 100%;
   background-color: inherit;
+  padding: 1.5rem;
+  padding-top: 112px; /* header fijo (88px) + 1.5rem */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+    padding-top: 88px; /* header fijo (72px) + 1rem */
+  }
 }
