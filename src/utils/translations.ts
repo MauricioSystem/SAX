@@ -61,6 +61,9 @@ export interface Translations {
     email: string;
     location: string;
   };
+  contact: {
+    enterCode: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -187,6 +190,9 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA)y de
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIA',
     },
+    contact: {
+      enterCode: 'Introduce el código mostrado',
+    },
   },
   en: {
     nav: {
@@ -311,6 +317,9 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIA',
     },
+    contact: {
+      enterCode: 'Enter the code shown',
+    },
   },
   fr: {
     nav: {
@@ -434,6 +443,9 @@ Nous avons le privilège d'être le distributeur exclusif d'ADATILE (USA) et d'E
       phone: '+59178646205',
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIE',
+    },
+    contact: {
+      enterCode: 'Saisissez le code affiché',
     },
   },
 };
