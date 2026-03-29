@@ -10,7 +10,9 @@ import caneca1 from '../assets/caneca1.png';
 import cono1 from '../assets/cono1.png';
 import cono2 from '../assets/cono2.png';
 import cono3 from '../assets/cono3.png';
-import delineador from '../assets/delineador.png';
+import hito1 from '../assets/hito1.png';
+import hito2 from '../assets/hito2.png';
+import hito3 from '../assets/hito3.png';
 import estoperol1 from '../assets/estoperol1.png';
 import estoperol2 from '../assets/estoperol2.png';
 import estoperol3 from '../assets/estoperol3.png';
@@ -29,17 +31,17 @@ import tope2 from '../assets/tope2.png';
 import tope3 from '../assets/tope3.png';
 import '../styles/Products.scss';
 
-// Map product IDs to their images
+
 const productImages: Record<number, string[]> = {
-  1: [barrera1], // Barrera o maletín plástico
-  2: [caneca1], // Caneca vial
-  3: [cono1, cono2, cono3], // Conos de tráfico
-  4: [delineador], // Delineador Flexible
-  5: [estoperol1, estoperol2, estoperol3, estoperol4], // Estoperol o Botón Vial
-  6: [resaltadodos1, resaltadodos2, resaltadodos3], // Resalto Vial 2 piezas
-  7: [resalto1, resalto2, resalto3], // Resalto Vial 3 piezas
-  8: [tachon1, tachon2, tachon3], // Tachón o Segregador Vial
-  9: [tope1, tope2, tope3], // Topes de Estacionamiento
+  1: [barrera1], 
+  2: [caneca1], 
+  3: [cono1, cono2, cono3],
+  4: [hito1, hito2, hito3], 
+  5: [estoperol1, estoperol2, estoperol3, estoperol4], 
+  6: [resaltadodos1, resaltadodos2, resaltadodos3], 
+  7: [resalto1, resalto2, resalto3], 
+  8: [tachon1, tachon2, tachon3], 
+  9: [tope1, tope2, tope3], 
 };
 
 const Products = () => {

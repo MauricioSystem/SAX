@@ -86,19 +86,38 @@
     .modal-images {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1rem;
+      width: 100%;
 
       .main-image {
-        width: 100%;
-        height: 400px;
+        width: auto;
+        max-width: 100%;
+        align-self: center;
+        min-height: 240px;
+        max-height: min(480px, 58vh);
         border-radius: 8px;
         overflow: hidden;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        box-sizing: border-box;
+        background-color: $white-warm;
+        border: 1px solid $white-warm;
 
         img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          display: block;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: min(420px, 52vh);
+          margin: 0 auto;
+          object-fit: contain;
+          object-position: center;
+          image-rendering: auto;
+          -ms-interpolation-mode: bicubic;
         }
       }
 
@@ -112,16 +131,25 @@
           height: 80px;
           border-radius: 8px;
           overflow: hidden;
-          border: 2px solid transparent;
+          border: 2px solid $white-warm;
           cursor: pointer;
-          padding: 0;
-          background: none;
+          padding: 4px;
+          box-sizing: border-box;
+          background-color: $white-warm;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           transition: all 0.3s ease;
 
           img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center;
+            image-rendering: auto;
           }
 
           &.active {
@@ -208,7 +236,12 @@
 
       .modal-images {
         .main-image {
-          height: 300px;
+          max-height: min(360px, 50vh);
+          min-height: 220px;
+
+          img {
+            max-height: min(320px, 46vh);
+          }
         }
       }
 
@@ -236,14 +269,12 @@
 
       .modal-images {
         .main-image {
-          height: 250px;
+          max-height: min(300px, 45vh);
+          min-height: 200px;
           width: 100%;
 
           img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: rgba(0, 0, 0, 0.05);
+            max-height: min(280px, 42vh);
           }
         }
 
@@ -257,9 +288,11 @@
             flex-shrink: 0;
 
             img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain;
             }
           }
         }

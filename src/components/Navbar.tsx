@@ -44,13 +44,15 @@ const Navbar = () => {
         className={`site-header ${theme}`}
         aria-label="SAX header"
       >
-        <Link to="/" className="site-header-link" onClick={handleCloseSidebar}>
-          <img
-            src={theme === 'dark' ? logooscuro : logoblanco}
-            alt="SAX Logo"
-            className="site-header-logo"
-          />
-        </Link>
+        <div className="site-header-inner">
+          <Link to="/" className="site-header-link" onClick={handleCloseSidebar}>
+            <img
+              src={theme === 'dark' ? logooscuro : logoblanco}
+              alt="SAX Logo"
+              className="site-header-logo"
+            />
+          </Link>
+        </div>
       </header>
 
       <aside
@@ -97,24 +99,27 @@ const Navbar = () => {
                 <ChevronDown size={16} className={isLangOpen ? 'open' : ''} />
               </button>
 
-              {isLangOpen && (
-                <div className="lang-menu" role="menu">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      type="button"
-                      role="menuitem"
-                      className={`lang-item ${language === lang.code ? 'active' : ''}`}
-                      onClick={() => {
-                        setLanguage(lang.code);
-                        setIsLangOpen(false);
-                      }}
-                    >
-                      {lang.label}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <div
+                className={`lang-menu ${isLangOpen ? 'is-open' : ''}`}
+                role="menu"
+                aria-hidden={!isLangOpen}
+              >
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    role="menuitem"
+                    tabIndex={isLangOpen ? 0 : -1}
+                    className={`lang-item ${language === lang.code ? 'active' : ''}`}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setIsLangOpen(false);
+                    }}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <button className="theme-toggle" onClick={toggleTheme} type="button">

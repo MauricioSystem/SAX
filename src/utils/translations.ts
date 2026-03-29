@@ -53,32 +53,8 @@ export interface Translations {
       technicalDetails: string;
     }>;
   };
-  contact: {
-    title: string;
-    description: string;
-    confirmationInfo: string;
-    spamInfo: string;
-    name: string;
-    email: string;
-    message: string;
-    verificationCode: string;
-    cannotDistinguish: string;
-    generateNew: string;
-    enterCode: string;
-    send: string;
-    sending: string;
-    success: string;
-    error: string;
-    nameRequired: string;
-    emailRequired: string;
-    emailInvalid: string;
-    messageRequired: string;
-    codeRequired: string;
-    codeInvalid: string;
-  };
   footer: {
     contactenos: string;
-    company: string;
     director: string;
     address: string;
     phone: string;
@@ -159,10 +135,11 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA)y de
         },
         {
           id: 4,
-          name: 'Delineador Flexible',
+          name: 'Hito flexible',
           category: 'Señalización Vial Temporal',
-          summary: 'Delineador Vial.',
-          technicalDetails: 'Estos dispositivos de canalización pueden utilizarse efectivamente para dividir vías de carriles contrarios, dividir el transito de vehículos automotores cuando dos o mas carriles se mantienen abiertos en la misma dirección.',
+          summary: 'HITO DELINEADOR VIAL FLEXIBLE',
+          technicalDetails:
+            'HITO DELINEADOR VIAL FLEXIBLE\n\nHito delineador vial flexible para señalización que se utiliza para delimitar o guiar el tránsito. Compuesto por dos piezas es de forma tubular y retráctil, hecho de polietileno. Posee 3 cintas reflectivas tipo panal de alta intensidad que aseguran su visibilidad, sobre todo en períodos de luminosidad reducida como la noche o bajo neblina. Estos elementos deberán cumplir con las exigencias que se indican a continuación.',
         },
         {
           id: 5,
@@ -201,35 +178,12 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA)y de
         },
       ],
     },
-    contact: {
-      title: 'Escribanos un Mensaje o Solicitud',
-      description: 'Para enviarnos un mensaje o solicitud, por favor ingrese su nombre, su email y el texto de su solicitud.',
-      confirmationInfo: 'Una vez que presente esta información, le enviaremos un mensaje para validar que el email es correcto, pidiendole que confirme que quiere enviar la solicitud. Una vez que confirme su mensaje será enviado al personal de soporte.',
-      spamInfo: 'Si no recibe el email de confirmación despues de haber presentado su solicitud, por favor revise su Correo no deseado. Por favor tome en cuenta que la direccion de la que se envia la confirmación es noreply@prexenta.com.',
-      name: 'Nombre',
-      email: 'Correo',
-      message: 'Texto de pregunta',
-      verificationCode: 'Código de verificación',
-      cannotDistinguish: 'No puede distinguir las letras?',
-      generateNew: 'Generar una nueva imagen',
-      enterCode: 'Por favor, escriba las letras y / o números que se muestran',
-      send: 'Enviar',
-      sending: 'Enviando...',
-      success: 'Mensaje enviado exitosamente. Revise su correo para confirmar.',
-      error: 'Error al enviar el mensaje. Por favor intente nuevamente.',
-      nameRequired: 'El nombre es requerido',
-      emailRequired: 'El correo es requerido',
-      emailInvalid: 'El correo no es válido',
-      messageRequired: 'El mensaje es requerido',
-      codeRequired: 'El código de verificación es requerido',
-      codeInvalid: 'El código de verificación es incorrecto',
-    },
     footer: {
       contactenos: 'CONTACTENOS',
-      company: 'SAX BOLIVIA',
-      director: 'Director Gral. Christian Sandoval F.',
-      address: 'C/Cobija #255 entre Warnes y Ñuflo de Chavez',
-      phone: 'Tel./Fax.: 591 33317201',
+      director: 'JOHN CHRISTIAN SANDOVAL FARAFAN',
+      address:
+        'C.S. DE SOLABARRIETA N°3035 AV. MUTUALISTA ENTRE 3ER Y 4TO ANILLO LA CALLE AL FRENTE DE SURTIDOR GENEX',
+      phone: '+59178646205',
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIA',
     },
@@ -305,10 +259,11 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
         },
         {
           id: 4,
-          name: 'Flexible Delineator',
+          name: 'Hito flexible',
           category: 'Temporary Road Signaling',
-          summary: 'Road Delineator.',
-          technicalDetails: 'These channeling devices can be used effectively to divide opposite lane roads, divide motor vehicle traffic when two or more lanes remain open in the same direction.',
+          summary: 'FLEXIBLE ROAD WAYMARKER (HITO)',
+          technicalDetails:
+            'FLEXIBLE ROAD WAYMARKER (HITO)\n\nFlexible road waymarker for signaling used to delimit or guide traffic. It consists of two pieces, is tubular and retractable, and is made of polyethylene. It has three honeycomb-type high-intensity reflective tapes that ensure visibility, especially in low-light conditions such as at night or in fog. These elements must comply with the requirements indicated below.',
         },
         {
           id: 5,
@@ -347,35 +302,12 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
         },
       ],
     },
-    contact: {
-      title: 'Write Us a Message or Request',
-      description: 'To send us a message or request, please enter your name, your email and the text of your request.',
-      confirmationInfo: 'Once you submit this information, we will send you a message to validate that the email is correct, asking you to confirm that you want to send the request. Once you confirm, your message will be sent to the support staff.',
-      spamInfo: 'If you do not receive the confirmation email after submitting your request, please check your Spam folder. Please note that the address from which the confirmation is sent is noreply@prexenta.com.',
-      name: 'Name',
-      email: 'Email',
-      message: 'Question Text',
-      verificationCode: 'Verification Code',
-      cannotDistinguish: 'Cannot distinguish the letters?',
-      generateNew: 'Generate a new image',
-      enterCode: 'Please enter the letters and/or numbers shown',
-      send: 'Send',
-      sending: 'Sending...',
-      success: 'Message sent successfully. Please check your email to confirm.',
-      error: 'Error sending message. Please try again.',
-      nameRequired: 'Name is required',
-      emailRequired: 'Email is required',
-      emailInvalid: 'Email is not valid',
-      messageRequired: 'Message is required',
-      codeRequired: 'Verification code is required',
-      codeInvalid: 'Verification code is incorrect',
-    },
     footer: {
       contactenos: 'CONTACT US',
-      company: 'SAX BOLIVIA',
-      director: 'General Director Christian Sandoval F.',
-      address: 'C/Cobija #255 between Warnes and Ñuflo de Chavez',
-      phone: 'Tel./Fax.: 591 33317201',
+      director: 'JOHN CHRISTIAN SANDOVAL FARAFAN',
+      address:
+        'C.S. DE SOLABARRIETA N°3035 AV. MUTUALISTA ENTRE 3ER Y 4TO ANILLO LA CALLE AL FRENTE DE SURTIDOR GENEX',
+      phone: '+59178646205',
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIA',
     },
@@ -451,10 +383,11 @@ Nous avons le privilège d'être le distributeur exclusif d'ADATILE (USA) et d'E
         },
         {
           id: 4,
-          name: 'Délinéateur Flexible',
+          name: 'Hito flexible',
           category: 'Signalisation Routière Temporaire',
-          summary: 'Délinéateur Routier.',
-          technicalDetails: 'Ces dispositifs de canalisation peuvent être utilisés efficacement pour diviser les routes à voies opposées, diviser le trafic des véhicules à moteur lorsque deux ou plusieurs voies restent ouvertes dans la même direction.',
+          summary: 'HITO FLEXIBLE DE SIGNALISATION ROUTIÈRE',
+          technicalDetails:
+            'HITO FLEXIBLE DE SIGNALISATION ROUTIÈRE\n\nHito flexible de signalisation routière utilisé pour délimiter ou guider la circulation. Composé de deux pièces, il est de forme tubulaire et rétractable, en polyéthylène. Il comporte 3 bandes réfléchissantes type nid d\'abeille haute intensité qui assurent sa visibilité, surtout lorsque la luminosité est réduite, comme la nuit ou par brume. Ces éléments devront respecter les exigences indiquées ci-dessous.',
         },
         {
           id: 5,
@@ -493,35 +426,12 @@ Nous avons le privilège d'être le distributeur exclusif d'ADATILE (USA) et d'E
         },
       ],
     },
-    contact: {
-      title: 'Écrivez-nous un Message ou une Demande',
-      description: 'Pour nous envoyer un message ou une demande, veuillez entrer votre nom, votre email et le texte de votre demande.',
-      confirmationInfo: 'Une fois que vous soumettez ces informations, nous vous enverrons un message pour valider que l\'email est correct, vous demandant de confirmer que vous souhaitez envoyer la demande. Une fois que vous confirmez, votre message sera envoyé au personnel de support.',
-      spamInfo: 'Si vous ne recevez pas l\'email de confirmation après avoir soumis votre demande, veuillez vérifier votre dossier Spam. Veuillez noter que l\'adresse à partir de laquelle la confirmation est envoyée est noreply@prexenta.com.',
-      name: 'Nom',
-      email: 'Email',
-      message: 'Texte de la Question',
-      verificationCode: 'Code de Vérification',
-      cannotDistinguish: 'Vous ne pouvez pas distinguer les lettres?',
-      generateNew: 'Générer une nouvelle image',
-      enterCode: 'Veuillez entrer les lettres et/ou chiffres affichés',
-      send: 'Envoyer',
-      sending: 'Envoi en cours...',
-      success: 'Message envoyé avec succès. Veuillez vérifier votre email pour confirmer.',
-      error: 'Erreur lors de l\'envoi du message. Veuillez réessayer.',
-      nameRequired: 'Le nom est requis',
-      emailRequired: 'L\'email est requis',
-      emailInvalid: 'L\'email n\'est pas valide',
-      messageRequired: 'Le message est requis',
-      codeRequired: 'Le code de vérification est requis',
-      codeInvalid: 'Le code de vérification est incorrect',
-    },
     footer: {
       contactenos: 'CONTACTEZ-NOUS',
-      company: 'SAX BOLIVIA',
-      director: 'Directeur Général Christian Sandoval F.',
-      address: 'C/Cobija #255 entre Warnes et Ñuflo de Chavez',
-      phone: 'Tel./Fax.: 591 33317201',
+      director: 'JOHN CHRISTIAN SANDOVAL FARAFAN',
+      address:
+        'C.S. DE SOLABARRIETA N°3035 AV. MUTUALISTA ENTRE 3ER Y 4TO ANILLO LA CALLE AL FRENTE DE SURTIDOR GENEX',
+      phone: '+59178646205',
       email: 'csandoval@sax.com.bo',
       location: 'SANTA CRUZ - BOLIVIE',
     },

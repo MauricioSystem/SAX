@@ -32,6 +32,7 @@ const ProductModal = ({ product, images, isOpen, onClose }: ProductModalProps) =
 
   useEffect(() => {
     if (isOpen) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentImageIndex(0); 
       document.body.style.overflow = 'hidden';
     } else {
@@ -49,14 +50,14 @@ const ProductModal = ({ product, images, isOpen, onClose }: ProductModalProps) =
     let message = '';
     
     if (language === 'es') {
-      message = `Solicito mas informacion de este producto ${product.name}`;
+      message = `Buenos días, estoy interesado en ${product.name} y quisiera cotizar (Cantidad) unidades.`;
     } else if (language === 'en') {
-      message = `I request more information about this product ${product.name}`;
+      message = `Good morning, I am interested in ${product.name} and would like to get a quote for (Quantity) units.`;
     } else {
-      message = `Je demande plus d'informations sur ce produit ${product.name}`;
+      message = `Bonjour, je suis intéressé par ${product.name} et j'aimerais obtenir un devis pour (Quantité) unités.`;
     }
     
-    const whatsappUrl = `https://wa.me/59171677149?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/59178646205?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

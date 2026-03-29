@@ -9,12 +9,14 @@
   width: 100%;
   background-color: inherit;
   padding: 1.5rem;
-  padding-top: 112px; /* header fijo (88px) + 1.5rem */
+  /* header fijo: franja 96px (88px logo + 8px delineador) + 1.5rem */
+  padding-top: 120px;
 }
 
 @media (max-width: 768px) {
   .main-content {
     padding: 1rem;
-    padding-top: 88px; /* header fijo (72px) + 1rem */
+    /* header: 80px (72px + 8px franja) + 1rem */
+    padding-top: 96px;
   }
 }
