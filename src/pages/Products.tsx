@@ -4,15 +4,15 @@ import SEO from '../components/SEO';
 import CategoryFilter from '../components/ui/CategoryFilter';
 import SearchInput from '../components/ui/SearchInput';
 import ProductModal from '../components/ProductModal';
-// Import product images
+
 import barrera1 from '../assets/barrera1.png';
 import caneca1 from '../assets/caneca1.png';
 import cono1 from '../assets/cono1.png';
 import cono2 from '../assets/cono2.png';
 import cono3 from '../assets/cono3.png';
-import hito1 from '../assets/hito1.png';
-import hito2 from '../assets/hito2.png';
-import hito3 from '../assets/hito3.png';
+import hito1 from '../assets/Hito1.png';
+import hito2 from '../assets/Hito2.png';
+import hito3 from '../assets/Hito3.png';
 import estoperol1 from '../assets/estoperol1.png';
 import estoperol2 from '../assets/estoperol2.png';
 import estoperol3 from '../assets/estoperol3.png';
