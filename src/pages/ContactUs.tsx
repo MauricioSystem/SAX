@@ -1,45 +1,61 @@
 import SEO from '../components/SEO';
 import { useLanguage } from '../utils/LanguageContext';
+import trabajoImg from '../assets/trabajo.png';
 import '../styles/ContactUs.scss';
+
+const copy = {
+  es: {
+    seoTitle: 'Abogados - SAX Bolivia',
+    seoDesc: 'Sección en mantenimiento.',
+    title: 'Página en mantenimiento',
+    subtitle: 'Estamos mejorando esta sección. Vuelve pronto.',
+    imgAlt: 'ATENCIÓN: Hombres trabajando',
+  },
+  en: {
+    seoTitle: 'Lawyers - SAX Bolivia',
+    seoDesc: 'Section under maintenance.',
+    title: 'Page under maintenance',
+    subtitle: "We're improving this section. Please check back soon.",
+    imgAlt: 'Work in progress',
+  },
+  fr: {
+    seoTitle: 'Avocats - SAX Bolivia',
+    seoDesc: 'Section en maintenance.',
+    title: 'Page en maintenance',
+    subtitle: 'Nous améliorons cette section. Revenez bientôt.',
+    imgAlt: 'Travaux en cours',
+  },
+} as const;
 
 const ContactUs = () => {
   const { language } = useLanguage();
+  const lang = language === 'es' || language === 'en' || language === 'fr' ? language : 'es';
+  const t = copy[lang];
 
   const baseUrl = 'https://sax.com.bo';
   const pageUrl = `${baseUrl}/contactenos`;
-  const ogImage = `${baseUrl}/favicon.png`;
-
-  const title =
-    language === 'es'
-      ? 'Contacto principal - SAX Bolivia'
-      : language === 'en'
-      ? 'Main Contact - SAX Bolivia'
-      : 'Contact principal - SAX Bolivia';
-
-  const description =
-    language === 'es'
-      ? 'Información de contacto principal de SAX Bolivia: teléfono y correo comercial.'
-      : language === 'en'
-      ? 'Main contact information for SAX Bolivia: phone and business email.'
-      : 'Informations de contact principales de SAX Bolivia : téléphone et e-mail commercial.';
 
   return (
-    <div className="contact-us contact-us-basic">
+    <div className="maintenance-page">
       <SEO
-        title={title}
-        description={description}
-        keywords="contacto SAX Bolivia, telefono SAX Bolivia, correo comercial SAX Bolivia"
-        ogImage={ogImage}
+        title={t.seoTitle}
+        description={t.seoDesc}
+        keywords="SAX Bolivia, mantenimiento"
+        ogImage={`${baseUrl}/favicon.png`}
         ogUrl={pageUrl}
         canonicalUrl={pageUrl}
       />
-      <div className="contact-container contact-container-basic">
-        <h1 className="contact-title-basic">{title}</h1>
-        <p className="contact-description-basic">{description}</p>
-        <div className="contact-info-basic">
-          <p>Teléfono: +519 78646205</p>
-          <p>Correo: comercial@sax.com.bo</p>
-        </div>
+
+      <div className="maintenance-sign" role="status" aria-live="polite">
+        <img
+          className="maintenance-sign__img"
+          src={trabajoImg}
+          alt={t.imgAlt}
+          loading="lazy"
+          decoding="async"
+        />
+        <h1 className="maintenance-sign__title">{t.title}</h1>
+        <p className="maintenance-sign__subtitle">{t.subtitle}</p>
       </div>
     </div>
   );
