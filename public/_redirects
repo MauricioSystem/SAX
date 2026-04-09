@@ -1,6 +1,7 @@
-# Netlify redirects file
-# Este archivo asegura que todas las rutas de React Router funcionen correctamente
-# y que los motores de búsqueda puedan indexar todas las páginas
+# Migración de rutas antiguas
+/quienes-somos /information 301
+/contactenos /legal-information 301
+/productos /products 301
 
-# Redirigir todas las rutas a index.html (SPA routing)
-/*    /index.html   200
+# SPA — debe ir al final
+/* /index.html 200

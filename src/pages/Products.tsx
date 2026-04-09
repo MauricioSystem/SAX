@@ -80,7 +80,7 @@ const Products = () => {
     : null;
 
   const baseUrl = 'https://sax.com.bo';
-  const pageUrl = `${baseUrl}/productos`;
+  const pageUrl = `${baseUrl}/products`;
   const ogImage = `${baseUrl}/favicon.png`;
 
   return (

@@ -75,13 +75,13 @@ const Navbar = () => {
             <Link to="/" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.inicio}
             </Link>
-            <Link to="/productos" className="sidebar-link" onClick={handleCloseSidebar}>
+            <Link to="/products" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.productos}
             </Link>
-            <Link to="/quienes-somos" className="sidebar-link" onClick={handleCloseSidebar}>
+            <Link to="/information" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.quienesSomos}
             </Link>
-            <Link to="/contactenos" className="sidebar-link" onClick={handleCloseSidebar}>
+            <Link to="/legal-information" className="sidebar-link" onClick={handleCloseSidebar}>
               {t.nav.contactenos}
             </Link>
           </nav>

@@ -13,10 +13,25 @@
   padding-top: 120px;
 }
 
+/* Información y Legal: sin hueco bajo el header; hero alineado con la franja del navbar */
+.main-content:has(.information-page),
+.main-content:has(.legal-page) {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 96px;
+}
+
 @media (max-width: 768px) {
   .main-content {
     padding: 1rem;
     /* header: 80px (72px + 8px franja) + 1rem */
     padding-top: 96px;
+  }
+
+  .main-content:has(.information-page),
+  .main-content:has(.legal-page) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 80px;
   }
 }

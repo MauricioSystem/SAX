@@ -2,8 +2,23 @@
   command = "npm run build"
   publish = "dist"
 
-# Redirects para React Router (SPA)
-# Todas las rutas deben apuntar a index.html para que React Router funcione
+# Rutas nuevas → redirección 301 desde URLs antiguas
+[[redirects]]
+  from = "/quienes-somos"
+  to = "/information"
+  status = 301
+
+[[redirects]]
+  from = "/contactenos"
+  to = "/legal-information"
+  status = 301
+
+[[redirects]]
+  from = "/productos"
+  to = "/products"
+  status = 301
+
+# SPA: el resto sirve index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"

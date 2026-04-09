@@ -18,22 +18,56 @@ export interface Translations {
     description: string;
   };
   aboutUs: {
-    card1: {
-      title: string;
-      text: string;
-    };
-    card2: {
-      title: string;
-      text: string;
-    };
-    card3: {
-      title: string;
-      text: string;
-    };
-    card4: {
-      title: string;
-      text: string;
-    };
+    seoTitle: string;
+    seoDescription: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    intro: string;
+    lead: string;
+    sectionSignageTitle: string;
+    sectionSignageIntro: string;
+    bulletEffexport: string;
+    bulletTrafficDevices: string;
+    bulletWritesys: string;
+    sectionLegalTitle: string;
+    sectionLegalIntro: string;
+    legalAgro: string;
+    legalCivil: string;
+    legalAgrarian: string;
+    sectionRegulatoryTitle: string;
+    sectionRegulatoryIntro: string;
+    regulatoryLinks: Array<{ label: string; href: string }>;
+  };
+  legalPage: {
+    seoTitle: string;
+    seoDescription: string;
+    heroEyebrow: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    contactIntro: string;
+    contactName: string;
+    contactRole: string;
+    ctaWhatsapp: string;
+    sectionAgroTitle: string;
+    agroLead: string;
+    inraTitle: string;
+    inraBullets: string[];
+    tribunalTitle: string;
+    tribunalBullets: string[];
+    consultoriaTitle: string;
+    consultoriaBullets: string[];
+    regulatoryTitle: string;
+    regulatoryIntro: string;
+    regulatoryLinks: Array<{ label: string; href: string }>;
+    sectionCivilTitle: string;
+    civilLead: string;
+    civilTitle: string;
+    civilBullets: string[];
+    empresarialTitle: string;
+    empresarialBullets: string[];
+    empresarialClosing: string;
+    arbitrajeTitle: string;
+    arbitrajeBullets: string[];
   };
   products: {
     requestProduct: string;
@@ -87,22 +121,140 @@ export const translations: Record<Language, Translations> = {
 Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA) y de EFEXPORT ZF (Colombia) en materia de este mobiliario y equipamiento vial, para las diversas empresas de carácter local, nacional e internacional.`,
     },
     aboutUs: {
-      card1: {
-        title: 'Nuestra Empresa',
-        text: 'Somos una empresa que está dedicada a soluciones y servicios en diferentes áreas como ser importación, exportación y comercialización de minerales, productos de consumo humano, equipos de oficina y maquinaria pesada. SAX cuenta con nexos comerciales en todo el territorio boliviano. Es por esto que se trabaja en diferentes tipos de proyectos así como en licitaciones públicas y privadas a nivel nacional e internacional.',
-      },
-      card2: {
-        title: 'Minerales',
-        text: 'En temas de minerales se trabaja en toda la comercialización hasta la exportación de los mismos. Se ha trabajado con minerales como ser SAL, COBRE Y ORO. La empresa cuenta con todos los registros y permisos necesarios en las diferentes entidades del estado como ser SENARECOM, SENAVEX, ADUANA NACIONAL DE BOLIVIA, SIN y otros. Es importante mencionar que cuenta con sucursales y socios estratégicos en las zonas donde se producen estos minerales (La Paz, Oruro, Potosí).',
-      },
-      card3: {
-        title: 'Importaciones',
-        text: 'En el área de importaciones se viene trabajando en la importación de diferentes productos según requerimientos de nuestros clientes. Se ha trabajado bastante en la importación de MAQUINARIA PESADA Y PRODUCTOS DE SEÑALIZACIÓN VIAL, EQUIPOS DE COMPUTACIÓN, INSUMOS MÉDICOS entre otros. Es importante mencionar que SAX cuenta con todos los registros y permisos necesarios para realizar todo tipo de importaciones.',
-      },
-      card4: {
-        title: 'Equipos de Computación',
-        text: 'Otra área importante de la empresa es la distribución y venta de EQUIPOS DE COMPUTACIÓN, (HARDWARE) ACCESORIOS Y PARTES para las diferentes empresas a nivel local y nacional. Las principales marcas con las que se trabaja son: HP, DELL, LENOVO, SAMSUNG, EPSON, CISCO, TOSHIBA, CANON, SONY, APC y otros. El objetivo principal es la de brindar un excelente servicio con precios competitivos para lograr satisfacer a nuestros clientes y construir una verdadera relación humana.',
-      },
+      seoTitle: 'Información - SAX Soluciones & Servicios',
+      seoDescription:
+        'Señalización vial integral, alianzas internacionales y consultoría legal especializada. Cumplimiento normativo boliviano: tránsito, NB, INRA y leyes agrarias.',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle: 'Señalización vial integral y respaldo jurídico especializado',
+      intro:
+        'En SAX Soluciones & Servicios integramos la mejor tecnología internacional de Colombia, Estados Unidos y Brasil con el conocimiento normativo boliviano. Instalamos señalización vial vertical y horizontal, dispositivos de seguridad y soluciones inteligentes de movilidad, cumpliendo con la Ley de Tránsito, las Normas Técnicas Bolivianas y las leyes agrarias (1715 y 3545).\n\nAdemás, brindamos consultoría legal agroambiental, civil y empresarial, con experiencia en procesos de saneamiento de tierras ante el INRA y en licitaciones públicas y privadas.\n\nCon SAX, su proyecto cuenta con tecnología de clase mundial, instalación integral y respaldo jurídico especializado, garantizando seguridad, modernidad y sostenibilidad en todo el país.',
+      lead:
+        'SAX Soluciones & Servicios es una empresa boliviana líder en señalización vial integral y consultoría legal especializada, comprometida con el desarrollo seguro y sostenible del país.',
+      sectionSignageTitle: 'Señalización vial e instalación completa',
+      sectionSignageIntro:
+        'Ofrecemos soluciones de señalización vertical (letreros reglamentarios, preventivos, informativos y turísticos) y señalización horizontal (demarcación de calzadas, pasos peatonales, carriles exclusivos, símbolos de tránsito).',
+      bulletEffexport:
+        'Productos de Effexport (Colombia): reductores de velocidad, hitos flexibles (balizas), topes de estacionamiento, tachones, estoperoles, tachas reflectivas (“ojos de gato”), canalizadores Jaguar, barreras tipo New Jersey, vallas retráctiles, delineadores tubulares y pinturas termoplásticas de alta durabilidad.',
+      bulletTrafficDevices:
+        'Traffic Devices (Estados Unidos): dispositivos de tráfico bajo el estándar MUTCD, incluyendo semáforos, paneles de mensajería variable, sistemas de control de tráfico y soluciones de seguridad vial.',
+      bulletWritesys:
+        'Writesys (Brasil): sistemas inteligentes de movilidad ITS, control y auditoría de peajes, gestión digital de tráfico y soluciones tecnológicas para movilidad urbana.',
+      sectionLegalTitle: 'Consultoría legal especializada',
+      sectionLegalIntro: 'Nuestro equipo jurídico brinda asesoría integral en:',
+      legalAgro:
+        'Agroambiental: cumplimiento normativo y gestión sostenible de proyectos rurales.',
+      legalCivil:
+        'Civil y empresarial: soporte legal para empresas y proyectos de infraestructura.',
+      legalAgrarian:
+        'Normativa agraria e INRA: procesos de saneamiento y regulación de tierras, con conocimiento de la Ley N.º 1715 de Servicio Nacional de Reforma Agraria, la Ley N.º 3545 de Reconducción Comunitaria de la Reforma Agraria y normativa complementaria.',
+      sectionRegulatoryTitle: 'Marco normativo boliviano',
+      sectionRegulatoryIntro: 'Todos nuestros proyectos se alinean con el marco legal aplicable. Referencias institucionales para consulta:',
+      regulatoryLinks: [
+        {
+          label: 'Ministerio de Obras Públicas, Servicios y Vivienda — transporte y tránsito',
+          href: 'https://www.oopp.gob.bo',
+        },
+        { label: 'IBNORCA — Normas Técnicas Bolivianas', href: 'https://www.ibnorca.org.bo' },
+        { label: 'INRA — Instituto Nacional de Reforma Agraria', href: 'https://www.inra.gob.bo' },
+        {
+          label: 'Gaceta Oficial del Estado Plurinacional de Bolivia',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Consulta de leyes (compilación Lexivox: Ley 259, 1715, 3545, entre otras)',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+      ],
+    },
+    legalPage: {
+      seoTitle: 'Asesoría legal — SAX Soluciones & Servicios',
+      seoDescription:
+        'Derecho agroambiental, agrario e INRA; tribunal agroambiental; consultoría ambiental; derecho civil y empresarial; conciliación y arbitraje. Bolivia.',
+      heroEyebrow: 'LEGAL SAX',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'Equipo especializado en derecho agroambiental y agrario, civil y empresarial, con acompañamiento en INRA, proyectos de infraestructura y solución de controversias.',
+      contactIntro: 'Contacto directo con asesoría',
+      contactName: 'Ingeniero JOHN CHRISTIAN SANDOVAL FARAFAN',
+      contactRole: 'Asesoría legal y consultoría',
+      ctaWhatsapp: 'Escríbenos por WhatsApp',
+      sectionAgroTitle: 'Derecho agroambiental y agrario',
+      agroLead:
+        'Contamos con experiencia en trámite y defensa vinculados al sector rural, recursos naturales y normativa boliviana aplicable.',
+      inraTitle: 'INRA (Instituto Nacional de Reforma Agraria)',
+      inraBullets: [
+        'Procesos de saneamiento de tierras.',
+        'Regularización de la propiedad agraria.',
+        'Asesoría en trámites administrativos y cumplimiento de normativa agraria.',
+      ],
+      tribunalTitle: 'Tribunal Agroambiental',
+      tribunalBullets: [
+        'Defensa y representación en procesos judiciales vinculados a tierras, recursos naturales y conflictos agrarios.',
+        'Aplicación de la Ley N.º 1715 de Servicio Nacional de Reforma Agraria y la Ley N.º 3545 de Reconducción Comunitaria de la Reforma Agraria.',
+        'Resolución de controversias sobre uso de suelos, derechos de propiedad y aprovechamiento sostenible.',
+      ],
+      consultoriaTitle: 'Consultoría agroambiental',
+      consultoriaBullets: [
+        'Cumplimiento de normativa ambiental en proyectos rurales y urbanos.',
+        'Evaluación de impacto ambiental y asesoría en licencias.',
+        'Integración de criterios de sostenibilidad en proyectos de infraestructura y señalización.',
+      ],
+      regulatoryTitle: 'Marco normativo boliviano relevante',
+      regulatoryIntro:
+        'Referencias legales e institucionales; en proyectos locales aplican también reglamentos municipales y departamentales según jurisdicción.',
+      regulatoryLinks: [
+        {
+          label: 'Ley N.º 1715 (1996) — Servicio Nacional de Reforma Agraria',
+          href: 'https://www.lexivox.org/norms/BO-L-1715.html',
+        },
+        {
+          label: 'Ley N.º 3545 (2006) — Reconducción Comunitaria de la Reforma Agraria',
+          href: 'https://www.lexivox.org/norms/BO-L-3545.html',
+        },
+        {
+          label: 'Ley de tránsito y seguridad vial — referencia compilada (Lexivox)',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+        {
+          label: 'Normas Técnicas Bolivianas — IBNORCA',
+          href: 'https://www.ibnorca.org.bo',
+        },
+        {
+          label: 'INRA — Instituto Nacional de Reforma Agraria',
+          href: 'https://www.inra.gob.bo',
+        },
+        {
+          label: 'Gaceta Oficial del Estado Plurinacional de Bolivia',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Ley N.º 708 (2015) — Conciliación y arbitraje',
+          href: 'https://www.lexivox.org/norms/BO-L-708.html',
+        },
+      ],
+      sectionCivilTitle: 'Enfoque legal civil y empresarial',
+      civilLead: 'Brindamos asesoría especializada en los siguientes ámbitos:',
+      civilTitle: 'Derecho civil',
+      civilBullets: [
+        'Contratos de obra, arrendamiento y servicios.',
+        'Responsabilidad civil en proyectos de infraestructura.',
+        'Resolución de conflictos entre particulares y comunidades.',
+      ],
+      empresarialTitle: 'Derecho empresarial',
+      empresarialBullets: [
+        'Constitución y asesoría de sociedades comerciales.',
+        'Cumplimiento normativo en licitaciones públicas y privadas.',
+        'Asesoría en fusiones, adquisiciones y alianzas estratégicas.',
+      ],
+      empresarialClosing:
+        'Defensa y representación en procesos administrativos y judiciales vinculados a la actividad empresarial.',
+      arbitrajeTitle: 'Conciliación y arbitraje',
+      arbitrajeBullets: [
+        'Resolución de conflictos mediante mecanismos alternativos, rápidos y eficientes.',
+        'Asesoría en procesos de conciliación privada y arbitraje institucional.',
+        'Enfoque en la prevención de litigios y en soluciones prácticas para empresas y comunidades.',
+        'Aplicación de la Ley N.º 708 de Conciliación y Arbitraje (2015), que regula estos mecanismos en Bolivia.',
+      ],
     },
     products: {
       requestProduct: 'Solicitar Producto',
@@ -214,22 +366,137 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA) y d
 We have the privilege of being the exclusive distributor of ADATILE (USA) and EFEXPORT ZF (Colombia) in terms of this furniture and road equipment, for various companies of local, national and international character.`,
     },
     aboutUs: {
-      card1: {
-        title: 'Our Company',
-        text: 'We are a company dedicated to solutions and services in different areas such as import, export and commercialization of minerals, human consumption products, office equipment and heavy machinery. SAX has commercial links throughout the Bolivian territory. This is why we work on different types of projects as well as public and private tenders at the national and international level.',
-      },
-      card2: {
-        title: 'Minerals',
-        text: 'In terms of minerals, we work in the entire commercialization up to the export of the same. We have worked with minerals such as SALT, COPPER AND GOLD. The company has all the necessary records and permits in the different state entities such as SENARECOM, SENAVEX, NATIONAL CUSTOMS OF BOLIVIA, SIN and others. It is important to mention that it has branches and strategic partners in the areas where these minerals are produced (La Paz, Oruro, Potosí).',
-      },
-      card3: {
-        title: 'Imports',
-        text: 'In the import area, we have been working on the import of different products according to our clients requirements. We have worked extensively on the import of HEAVY MACHINERY AND ROAD SIGNALING PRODUCTS, COMPUTING EQUIPMENT, MEDICAL SUPPLIES among others. It is important to mention that SAX has all the necessary records and permits to carry out all types of imports.',
-      },
-      card4: {
-        title: 'Computing Equipment',
-        text: 'Another important area of the company is the distribution and sale of COMPUTING EQUIPMENT, (HARDWARE) ACCESSORIES AND PARTS for different companies at the local and national level. The main brands we work with are: HP, DELL, LENOVO, SAMSUNG, EPSON, CISCO, TOSHIBA, CANON, SONY, APC and others. The main objective is to provide excellent service with competitive prices to satisfy our customers and build a true human relationship.',
-      },
+      seoTitle: 'Information - SAX Soluciones & Servicios',
+      seoDescription:
+        'Comprehensive road signage, international partnerships and specialized legal consulting. Compliance with Bolivian regulations: traffic, NB standards, INRA and agrarian laws.',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle: 'Comprehensive road signage and specialized legal support',
+      intro:
+        'At SAX Soluciones & Servicios we integrate the best international technology from Colombia, the United States and Brazil with Bolivian regulatory expertise. We install vertical and horizontal road signage, safety devices and intelligent mobility solutions, complying with the Traffic Law, Bolivian Technical Standards and agrarian laws (1715 and 3545).\n\nWe also provide agro-environmental, civil and business legal consulting, with experience in land regularization before INRA and in public and private procurement.\n\nWith SAX, your project benefits from world-class technology, end-to-end installation and specialized legal backing, ensuring safety, modernity and sustainability across the country.',
+      lead:
+        'SAX Soluciones & Servicios is a leading Bolivian company in comprehensive road signage and specialized legal consulting, committed to safe and sustainable national development.',
+      sectionSignageTitle: 'Road signage and full installation',
+      sectionSignageIntro:
+        'We deliver vertical signage (regulatory, warning, informative and tourist) and horizontal signage (carriageway marking, pedestrian crossings, exclusive lanes and traffic symbols).',
+      bulletEffexport:
+        'Effexport (Colombia) portfolio: speed reducers, flexible waymarkers, parking stops, lane separators, road studs, reflective pavement markers (“cat eyes”), Jaguar channelizers, New Jersey-type barriers, retractable barriers, tubular delineators and high-durability thermoplastic markings.',
+      bulletTrafficDevices:
+        'Traffic Devices (United States): traffic control devices under MUTCD principles, including traffic signals, variable message signs, traffic control systems and road safety solutions.',
+      bulletWritesys:
+        'Writesys (Brazil): intelligent ITS mobility, toll control and auditing, digital traffic management and technology solutions for urban mobility.',
+      sectionLegalTitle: 'Specialized legal consulting',
+      sectionLegalIntro: 'Our legal team provides comprehensive advice in:',
+      legalAgro:
+        'Agro-environmental: regulatory compliance and sustainable management of rural projects.',
+      legalCivil:
+        'Civil and business: legal support for companies and infrastructure projects.',
+      legalAgrarian:
+        'Agrarian law and INRA: land regularization and regulation processes, with knowledge of Law No. 1715 on the National Agrarian Reform Service, Law No. 3545 on the community-based redirection of agrarian reform and complementary regulations.',
+      sectionRegulatoryTitle: 'Bolivian regulatory framework',
+      sectionRegulatoryIntro:
+        'All projects align with applicable law. Institutional references for consultation:',
+      regulatoryLinks: [
+        {
+          label: 'Ministry of Public Works, Services and Housing — transport and traffic',
+          href: 'https://www.oopp.gob.bo',
+        },
+        { label: 'IBNORCA — Bolivian Technical Standards', href: 'https://www.ibnorca.org.bo' },
+        { label: 'INRA — National Agrarian Reform Institute', href: 'https://www.inra.gob.bo' },
+        {
+          label: 'Official Gazette of the Plurinational State of Bolivia',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Law lookup (Lexivox compilation: Laws 259, 1715, 3545, among others)',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+      ],
+    },
+    legalPage: {
+      seoTitle: 'Legal counsel — SAX Soluciones & Servicios',
+      seoDescription:
+        'Agro-environmental and agrarian law, INRA, agri-environmental courts, environmental consulting, civil and business law, conciliation and arbitration. Bolivia.',
+      heroEyebrow: 'LEGAL SAX',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'Specialized team in agro-environmental and agrarian law, civil and business matters, supporting INRA processes, infrastructure projects and dispute resolution.',
+      contactIntro: 'Direct contact for counsel',
+      contactName: 'Engineer JOHN CHRISTIAN SANDOVAL FARAFAN',
+      contactRole: 'Legal and consulting advisory',
+      ctaWhatsapp: 'Message us on WhatsApp',
+      sectionAgroTitle: 'Agro-environmental and agrarian law',
+      agroLead:
+        'We have experience in proceedings and representation related to the rural sector, natural resources and applicable Bolivian regulations.',
+      inraTitle: 'INRA (National Institute for Agrarian Reform)',
+      inraBullets: [
+        'Land regularization and clearance processes.',
+        'Regularization of agrarian property.',
+        'Administrative procedures and compliance with agrarian regulations.',
+      ],
+      tribunalTitle: 'Agri-environmental justice',
+      tribunalBullets: [
+        'Defense and representation in proceedings involving land, natural resources and agrarian conflicts.',
+        'Application of Law No. 1715 on the National Agrarian Reform Service and Law No. 3545 on the community-based redirection of agrarian reform.',
+        'Disputes on land use, ownership and sustainable use.',
+      ],
+      consultoriaTitle: 'Agro-environmental consulting',
+      consultoriaBullets: [
+        'Environmental compliance in rural and urban projects.',
+        'Environmental impact assessment and permitting support.',
+        'Sustainability criteria in infrastructure and signage projects.',
+      ],
+      regulatoryTitle: 'Relevant Bolivian legal framework',
+      regulatoryIntro: 'Legal and institutional references:',
+      regulatoryLinks: [
+        {
+          label: 'Law No. 1715 (1996) — National Agrarian Reform Service',
+          href: 'https://www.lexivox.org/norms/BO-L-1715.html',
+        },
+        {
+          label: 'Law No. 3545 (2006) — Community-based redirection of agrarian reform',
+          href: 'https://www.lexivox.org/norms/BO-L-3545.html',
+        },
+        {
+          label: 'Traffic and road safety law — Lexivox reference',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+        { label: 'Bolivian Technical Standards — IBNORCA', href: 'https://www.ibnorca.org.bo' },
+        {
+          label: 'INRA — National Institute for Agrarian Reform',
+          href: 'https://www.inra.gob.bo',
+        },
+        {
+          label: 'Official Gazette of the Plurinational State of Bolivia',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Law No. 708 (2015) — Conciliation and arbitration',
+          href: 'https://www.lexivox.org/norms/BO-L-708.html',
+        },
+      ],
+      sectionCivilTitle: 'Civil and business legal practice',
+      civilLead: 'We provide specialized counsel in:',
+      civilTitle: 'Civil law',
+      civilBullets: [
+        'Construction, lease and service contracts.',
+        'Civil liability in infrastructure projects.',
+        'Disputes between individuals and communities.',
+      ],
+      empresarialTitle: 'Business law',
+      empresarialBullets: [
+        'Incorporation and ongoing advice to companies.',
+        'Regulatory compliance in public and private procurement.',
+        'M&A and strategic alliances.',
+      ],
+      empresarialClosing:
+        'Defense and representation in administrative and judicial proceedings linked to business activity.',
+      arbitrajeTitle: 'Conciliation and arbitration',
+      arbitrajeBullets: [
+        'Alternative, fast and efficient dispute resolution.',
+        'Private conciliation and institutional arbitration.',
+        'Focus on litigation prevention and practical outcomes for companies and communities.',
+        'Application of Law No. 708 on Conciliation and Arbitration (2015), governing these mechanisms in Bolivia.',
+      ],
     },
     products: {
       requestProduct: 'Request Product',
@@ -341,22 +608,143 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
 Nous avons le privilège d'être le distributeur exclusif d'ADATILE (USA) et d'EFEXPORT ZF (Colombie) en matière de mobilier et d'équipement routier, pour diverses entreprises de caractère local, national et international.`,
     },
     aboutUs: {
-      card1: {
-        title: 'Notre Entreprise',
-        text: 'Nous sommes une entreprise dédiée aux solutions et services dans différents domaines tels que l\'importation, l\'exportation et la commercialisation de minéraux, produits de consommation humaine, équipements de bureau et machinerie lourde. SAX a des liens commerciaux sur tout le territoire bolivien. C\'est pourquoi nous travaillons sur différents types de projets ainsi que sur des appels d\'offres publics et privés au niveau national et international.',
-      },
-      card2: {
-        title: 'Minéraux',
-        text: 'En termes de minéraux, nous travaillons dans toute la commercialisation jusqu\'à l\'exportation des mêmes. Nous avons travaillé avec des minéraux tels que le SEL, le CUIVRE et l\'OR. L\'entreprise dispose de tous les registres et permis nécessaires dans les différentes entités de l\'État telles que SENARECOM, SENAVEX, DOUANES NATIONALES DE BOLIVIE, SIN et autres. Il est important de mentionner qu\'elle dispose de succursales et de partenaires stratégiques dans les zones où ces minéraux sont produits (La Paz, Oruro, Potosí).',
-      },
-      card3: {
-        title: 'Importations',
-        text: 'Dans le domaine des importations, nous travaillons sur l\'importation de différents produits selon les exigences de nos clients. Nous avons beaucoup travaillé sur l\'importation de MACHINERIE LOURDE ET PRODUITS DE SIGNALISATION ROUTIÈRE, ÉQUIPEMENTS INFORMATIQUES, FOURNITURES MÉDICALES entre autres. Il est important de mentionner que SAX dispose de tous les registres et permis nécessaires pour effectuer tous types d\'importations.',
-      },
-      card4: {
-        title: 'Équipements Informatiques',
-        text: 'Un autre domaine important de l\'entreprise est la distribution et la vente d\'ÉQUIPEMENTS INFORMATIQUES, (MATÉRIEL) ACCESSOIRES ET PIÈCES pour les différentes entreprises au niveau local et national. Les principales marques avec lesquelles nous travaillons sont: HP, DELL, LENOVO, SAMSUNG, EPSON, CISCO, TOSHIBA, CANON, SONY, APC et autres. L\'objectif principal est de fournir un excellent service avec des prix compétitifs pour satisfaire nos clients et construire une véritable relation humaine.',
-      },
+      seoTitle: 'Informations - SAX Soluciones & Servicios',
+      seoDescription:
+        'Signalisation routière intégrale, partenariats internationaux et conseil juridique spécialisé. Conformité au droit bolivien : circulation, normes NB, INRA et lois agraires.',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle: 'Signalisation routière intégrale et appui juridique spécialisé',
+      intro:
+        'Chez SAX Soluciones & Servicios, nous intégrons les meilleures technologies internationales de Colombie, des États-Unis et du Brésil avec le cadre normatif bolivien. Nous installons une signalisation verticale et horizontale, des dispositifs de sécurité et des solutions ITS, en respectant la loi sur la circulation, les Normes Techniques Boliviennes et les lois agraires (1715 et 3545).\n\nNous assurons également un conseil juridique agro-environnemental, civil et des affaires, avec une expérience des procédures de régularisation foncière auprès de l\'INRA et des appels d\'offres publics et privés.\n\nAvec SAX, votre projet bénéficie de technologies de référence, d\'une installation complète et d\'un accompagnement juridique spécialisé, pour la sécurité, la modernité et la durabilité sur tout le territoire.',
+      lead:
+        'SAX Soluciones & Servicios est une entreprise bolivienne de référence en signalisation routière intégrale et en conseil juridique spécialisé, engagée pour un développement sûr et durable du pays.',
+      sectionSignageTitle: 'Signalisation routière et installation complète',
+      sectionSignageIntro:
+        'Nous proposons des solutions de signalisation verticale (panneaux réglementaires, d\'avertissement, d\'information et touristiques) et horizontale (marquage des chaussées, passages piétons, voies réservées et symboles).',
+      bulletEffexport:
+        'Gamme Effexport (Colombie) : ralentisseurs, balises flexibles, butées de stationnement, séparateurs, clous routiers, réflecteurs (« yeux de chat »), canaliseurs Jaguar, barrières type New Jersey, barrières rétractables, délinéateurs tubulaires et peintures thermoplastiques haute durabilité.',
+      bulletTrafficDevices:
+        'Traffic Devices (États-Unis) : dispositifs de circulation conformes aux principes MUTCD, feux, panneaux à message variable, systèmes de régulation et sécurité routière.',
+      bulletWritesys:
+        'Writesys (Brésil) : mobilité ITS intelligente, contrôle et audit de péage, gestion numérique du trafic et solutions technologiques pour la mobilité urbaine.',
+      sectionLegalTitle: 'Conseil juridique spécialisé',
+      sectionLegalIntro: 'Notre équipe juridique offre un accompagnement intégral en :',
+      legalAgro:
+        'Agro-environnemental : conformité réglementaire et gestion durable des projets ruraux.',
+      legalCivil:
+        'Droit civil et des affaires : soutien aux entreprises et aux projets d\'infrastructure.',
+      legalAgrarian:
+        'Droit agraire et INRA : régularisation et régulation foncières, maîtrise de la loi n° 1715 sur le service national de réforme agraire, de la loi n° 3545 sur l\'orientation communautaire de la réforme agraire et des textes complémentaires.',
+      sectionRegulatoryTitle: 'Cadre normatif bolivien',
+      sectionRegulatoryIntro:
+        'Nos projets respectent le cadre légal applicable. Références institutionnelles pour consultation :',
+      regulatoryLinks: [
+        {
+          label: 'Ministère des Travaux Publics, Services et Logement — transport et circulation',
+          href: 'https://www.oopp.gob.bo',
+        },
+        { label: 'IBNORCA — Normes techniques boliviennes', href: 'https://www.ibnorca.org.bo' },
+        {
+          label: 'INRA — Institut national de la réforme agraire',
+          href: 'https://www.inra.gob.bo',
+        },
+        {
+          label: 'Gazette officielle de l\'État plurinational de Bolivie',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Consultation des lois (compilation Lexivox : lois 259, 1715, 3545, etc.)',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+      ],
+    },
+    legalPage: {
+      seoTitle: 'Conseil juridique — SAX Soluciones & Servicios',
+      seoDescription:
+        'Droit agro-environnemental et agraire, INRA, juridictions agro-environnementales, conseil environnemental, droit civil et des affaires, conciliation et arbitrage. Bolivie.',
+      heroEyebrow: 'LEGAL SAX',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'Équipe spécialisée en droit agro-environnemental et agraire, civil et des affaires, avec accompagnement INRA, projets d\'infrastructure et résolution des conflits.',
+      contactIntro: 'Contact direct pour un conseil',
+      contactName: 'Ingénieur JOHN CHRISTIAN SANDOVAL FARAFAN',
+      contactRole: 'Conseil juridique et consulting',
+      ctaWhatsapp: 'Écrivez-nous sur WhatsApp',
+      sectionAgroTitle: 'Droit agro-environnemental et agraire',
+      agroLead:
+        'Nous avons de l\'expérience dans les procédures et la défense liées au secteur rural, aux ressources naturelles et au droit bolivien applicable.',
+      inraTitle: 'INRA (Institut national de la réforme agraire)',
+      inraBullets: [
+        'Procédures de régularisation et d\'assainissement foncier.',
+        'Régularisation de la propriété agraire.',
+        'Démarches administratives et conformité à la réglementation agraire.',
+      ],
+      tribunalTitle: 'Justice agro-environnementale',
+      tribunalBullets: [
+        'Défense et représentation dans les procédures liées aux terres, aux ressources naturelles et aux conflits agraires.',
+        'Application de la loi n° 1715 sur le service national de réforme agraire et de la loi n° 3545 sur l\'orientation communautaire de la réforme agraire.',
+        'Differends sur l\'usage des sols, la propriété et l\'exploitation durable.',
+      ],
+      consultoriaTitle: 'Conseil agro-environnemental',
+      consultoriaBullets: [
+        'Conformité environnementale dans les projets ruraux et urbains.',
+        'Évaluation d\'impact environnemental et aide aux autorisations.',
+        'Critères de durabilité dans les projets d\'infrastructure et de signalisation.',
+      ],
+      regulatoryTitle: 'Cadre juridique bolivien pertinent',
+      regulatoryIntro: 'Références juridiques et institutionnelles :',
+      regulatoryLinks: [
+        {
+          label: 'Loi n° 1715 (1996) — Service national de réforme agraire',
+          href: 'https://www.lexivox.org/norms/BO-L-1715.html',
+        },
+        {
+          label: 'Loi n° 3545 (2006) — Orientation communautaire de la réforme agraire',
+          href: 'https://www.lexivox.org/norms/BO-L-3545.html',
+        },
+        {
+          label: 'Loi sur la circulation et la sécurité routière — référence Lexivox',
+          href: 'https://www.lexivox.org/norms/BO-L-259.html',
+        },
+        {
+          label: 'Normes techniques boliviennes — IBNORCA',
+          href: 'https://www.ibnorca.org.bo',
+        },
+        {
+          label: 'INRA — Institut national de la réforme agraire',
+          href: 'https://www.inra.gob.bo',
+        },
+        {
+          label: 'Gazette officielle de l\'État plurinational de Bolivie',
+          href: 'https://www.gacetaoficialdebolivia.gob.bo',
+        },
+        {
+          label: 'Loi n° 708 (2015) — Conciliation et arbitrage',
+          href: 'https://www.lexivox.org/norms/BO-L-708.html',
+        },
+      ],
+      sectionCivilTitle: 'Pratique du droit civil et des affaires',
+      civilLead: 'Nous offrons un conseil spécialisé dans les domaines suivants :',
+      civilTitle: 'Droit civil',
+      civilBullets: [
+        'Contrats de travaux, de bail et de services.',
+        'Responsabilité civile dans les projets d\'infrastructure.',
+        'Résolution des conflits entre particuliers et communautés.',
+      ],
+      empresarialTitle: 'Droit des affaires',
+      empresarialBullets: [
+        'Constitution et accompagnement des sociétés commerciales.',
+        'Conformité réglementaire dans les marchés publics et privés.',
+        'Fusions, acquisitions et alliances stratégiques.',
+      ],
+      empresarialClosing:
+        'Défense et représentation dans les procédures administratives et judiciaires liées à l\'activité des entreprises.',
+      arbitrajeTitle: 'Conciliation et arbitrage',
+      arbitrajeBullets: [
+        'Résolution des conflits par des moyens alternatifs, rapides et efficaces.',
+        'Accompagnement en conciliation privée et arbitrage institutionnel.',
+        'Prévention des litiges et solutions pratiques pour entreprises et communautés.',
+        'Application de la loi n° 708 sur la conciliation et l\'arbitrage (2015), qui régit ces mécanismes en Bolivie.',
+      ],
     },
     products: {
       requestProduct: 'Demander le Produit',

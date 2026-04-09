@@ -1,75 +1,95 @@
 import { useLanguage } from '../utils/LanguageContext';
 import SEO from '../components/SEO';
-import nuestraEmpresa from '../assets/nuestra empresa.png';
-import cobre from '../assets/cobre.png';
-import importacion from '../assets/importacion.png';
-import compu from '../assets/compu.png';
+import { ExternalLink } from 'lucide-react';
 import '../styles/AboutUs.scss';
+
+function Paragraphs({ text }: { text: string }) {
+  return (
+    <>
+      {text.split('\n\n').map((block, i) => (
+        <p key={i} className="information__paragraph">
+          {block}
+        </p>
+      ))}
+    </>
+  );
+}
 
 const AboutUs = () => {
   const { t, language } = useLanguage();
-
-  const cards = [
-    {
-      id: 1,
-      title: t.aboutUs.card1.title,
-      text: t.aboutUs.card1.text,
-      image: nuestraEmpresa,
-    },
-    {
-      id: 2,
-      title: t.aboutUs.card2.title,
-      text: t.aboutUs.card2.text,
-      image: cobre,
-    },
-    {
-      id: 3,
-      title: t.aboutUs.card3.title,
-      text: t.aboutUs.card3.text,
-      image: importacion,
-    },
-    {
-      id: 4,
-      title: t.aboutUs.card4.title,
-      text: t.aboutUs.card4.text,
-      image: compu,
-    },
-  ];
+  const a = t.aboutUs;
 
   const baseUrl = 'https://sax.com.bo';
-  const pageUrl = `${baseUrl}/quienes-somos`;
-  const ogImage = `${baseUrl}/favicon.png`;
+  const pageUrl = `${baseUrl}/information`;
 
   return (
-    <div className="about-us">
+    <div className="information-page">
       <SEO
-        title={language === 'es'
-          ? 'Quiénes Somos - SAX Bolivia'
-          : language === 'en'
-          ? 'About Us - SAX Bolivia'
-          : 'À Propos - SAX Bolivia'}
-        description={language === 'es'
-          ? 'Conoce más sobre SAX Bolivia, nuestra empresa, experiencia en cobre, importaciones y tecnología.'
-          : language === 'en'
-          ? 'Learn more about SAX Bolivia, our company, copper experience, imports and technology.'
-          : 'En savoir plus sur SAX Bolivia, notre entreprise, notre expérience en cuivre, nos importations et notre technologie.'}
-        keywords="SAX Bolivia, empresa, cobre, importaciones, tecnología, Bolivia"
-        ogImage={ogImage}
+        title={a.seoTitle}
+        description={a.seoDescription}
+        keywords="SAX Bolivia, señalización vial, INRA, Normas Bolivianas, consultoría legal, Bolivia"
+        ogImage={`${baseUrl}/favicon.png`}
         ogUrl={pageUrl}
         canonicalUrl={pageUrl}
       />
-      <div className="about-us-container">
-        {cards.map((card, index) => (
-          <div key={card.id} className={`about-card ${index % 2 === 0 ? 'image-left' : 'image-right'}`}>
-            <div className={`card-image ${index === 2 ? 'importacion-image' : ''}`}>
-              <img src={card.image} alt={card.title} />
-            </div>
-            <div className="card-content">
-              <h2 className="card-title">{card.title}</h2>
-              <p className="card-text">{card.text}</p>
-            </div>
-          </div>
-        ))}
+
+      <header className="information-hero">
+        <div className="information-hero__inner">
+          <p className="information-hero__eyebrow">
+            {language === 'es' ? 'Información corporativa' : language === 'en' ? 'Corporate information' : 'Information corporate'}
+          </p>
+          <h1 className="information-hero__title">{a.heroTitle}</h1>
+          <p className="information-hero__subtitle">{a.heroSubtitle}</p>
+        </div>
+      </header>
+
+      <div className="information-strip" aria-hidden="true" />
+
+      <div className="information-container">
+        <section className="information-section">
+          <Paragraphs text={a.intro} />
+          <p className="information__lead">{a.lead}</p>
+        </section>
+
+        <section className="information-section">
+          <h2 className="information__h2">{a.sectionSignageTitle}</h2>
+          <p className="information__paragraph">{a.sectionSignageIntro}</p>
+          <ul className="information__list">
+            <li>{a.bulletEffexport}</li>
+            <li>{a.bulletTrafficDevices}</li>
+            <li>{a.bulletWritesys}</li>
+          </ul>
+        </section>
+
+        <section className="information-section">
+          <h2 className="information__h2">{a.sectionLegalTitle}</h2>
+          <p className="information__paragraph">{a.sectionLegalIntro}</p>
+          <ul className="information__list information__list--legal">
+            <li>{a.legalAgro}</li>
+            <li>{a.legalCivil}</li>
+            <li>{a.legalAgrarian}</li>
+          </ul>
+        </section>
+
+        <section className="information-section information-section--regulatory">
+          <h2 className="information__h2">{a.sectionRegulatoryTitle}</h2>
+          <p className="information__paragraph">{a.sectionRegulatoryIntro}</p>
+          <ul className="information__link-list">
+            {a.regulatoryLinks.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="information__external-link"
+                >
+                  <span>{item.label}</span>
+                  <ExternalLink size={16} className="information__external-icon" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
