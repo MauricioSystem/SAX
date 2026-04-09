@@ -15,7 +15,24 @@ export interface Translations {
     emailLabel: string;
   };
   home: {
-    description: string;
+    seoTitle: string;
+    seoDescription: string;
+    heroEyebrow: string;
+    heroTitle: string;
+    heroSubtitle: string;
+    heroCtaInformation: string;
+    heroCtaProducts: string;
+    heroCtaLegal: string;
+    carouselTitle: string;
+    carouselSubtitle: string;
+    carouselRegionLabel: string;
+    insightsSectionTitle: string;
+    insightCards: Array<{
+      title: string;
+      body: string;
+      cta: string;
+      to: 'information' | 'products' | 'legal';
+    }>;
   };
   aboutUs: {
     seoTitle: string;
@@ -116,9 +133,41 @@ export const translations: Record<Language, Translations> = {
       emailLabel: 'Correo',
     },
     home: {
-      description: `Somos una empresa que está dedicada a soluciones y servicios en diferentes áreas como ser: productos de señalización, seguridad vial, Comercialización o ventas de Lamparas Led (Asia), equipos de oficina y maquinaria pesada. Exportación y Comercialización de Minerales certificado de registro fitosanitario; importación de productos de origen vegetal (granos), es emitido por el senasag; SAX cuenta con nexos comerciales en todo el territorio boliviano.  Es por esto que se trabaja en diferentes tipos de proyectos así como en licitaciones públicas y privadas a nivel nacional e internacional.
-
-Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA) y de EFEXPORT ZF (Colombia) en materia de este mobiliario y equipamiento vial, para las diversas empresas de carácter local, nacional e internacional.`,
+      seoTitle: 'SAX Bolivia — Señalización vial y servicios',
+      seoDescription:
+        'Señalización vial integral, productos certificados y respaldo jurídico en Bolivia. Tecnología internacional con cumplimiento normativo NB y Ley de Tránsito.',
+      heroEyebrow: 'SAX Bolivia',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'Integramos tecnología de Colombia, Estados Unidos y Brasil con el marco normativo boliviano: señalización vertical y horizontal, dispositivos de seguridad vial y consultoría legal especializada ante INRA y en licitaciones.',
+      heroCtaInformation: 'Información corporativa',
+      heroCtaProducts: 'Catálogo de productos',
+      heroCtaLegal: 'Asesoría legal',
+      carouselTitle: 'Productos destacados',
+      carouselSubtitle:
+        'Dispositivos para obra, canalización y señalización temporal y permanente.',
+      carouselRegionLabel: 'Carrusel de productos',
+      insightsSectionTitle: 'Normativa, proyectos y acompañamiento',
+      insightCards: [
+        {
+          title: 'Normativa vial y estándares NB',
+          body: 'Señalización alineada con la Ley de Tránsito y Seguridad Vial y criterios de las Normas Técnicas Bolivianas en diseño, visibilidad y materiales.',
+          cta: 'Leer más',
+          to: 'information',
+        },
+        {
+          title: 'Marco agrario, INRA y justicia agroambiental',
+          body: 'Experiencia en saneamiento de tierras, regularización agraria y defensa en materia de recursos naturales, con aplicación de las leyes 1715 y 3545.',
+          cta: 'Área legal',
+          to: 'legal',
+        },
+        {
+          title: 'Alianzas y proyectos nacionales',
+          body: 'Distribución Effexport, Traffic Devices y Writesys; instalación integral y participación en licitaciones públicas y privadas en todo el país.',
+          cta: 'Información completa',
+          to: 'information',
+        },
+      ],
     },
     aboutUs: {
       seoTitle: 'Información - SAX Soluciones & Servicios',
@@ -361,9 +410,40 @@ Contamos con el privilegio de ser el distribuidor exclusivo de ADATILE (USA) y d
       emailLabel: 'Email',
     },
     home: {
-      description: `We are a company dedicated to solutions and services in different areas such as: signaling products, road safety, Commercialization or sales of Led Lamps (Asia), office equipment and heavy machinery. Export and Commercialization of Minerals with phytosanitary registration certificate; import of products of vegetable origin (grains), is issued by senasag; SAX has commercial links throughout the Bolivian territory. This is why we work on different types of projects as well as public and private tenders at the national and international level.
-
-We have the privilege of being the exclusive distributor of ADATILE (USA) and EFEXPORT ZF (Colombia) in terms of this furniture and road equipment, for various companies of local, national and international character.`,
+      seoTitle: 'SAX Bolivia — Road signage and services',
+      seoDescription:
+        'End-to-end road signage, certified products and legal support in Bolivia. International technology aligned with NB standards and traffic regulations.',
+      heroEyebrow: 'SAX Bolivia',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'We combine technology from Colombia, the United States and Brazil with Bolivian regulations: vertical and horizontal signage, road safety devices and specialized legal counsel for INRA processes and procurement.',
+      heroCtaInformation: 'Corporate information',
+      heroCtaProducts: 'Product catalog',
+      heroCtaLegal: 'Legal counsel',
+      carouselTitle: 'Featured products',
+      carouselSubtitle: 'Devices for works, channeling and temporary or permanent signage.',
+      carouselRegionLabel: 'Product carousel',
+      insightsSectionTitle: 'Regulations, projects and support',
+      insightCards: [
+        {
+          title: 'Traffic regulations and NB standards',
+          body: 'Signage aligned with the Traffic and Road Safety Law and Bolivian Technical Standards for design, visibility and materials.',
+          cta: 'Learn more',
+          to: 'information',
+        },
+        {
+          title: 'Agrarian framework, INRA and agri-environmental justice',
+          body: 'Experience in land clearance, agrarian regularization and natural-resource matters, applying Laws 1715 and 3545.',
+          cta: 'Legal area',
+          to: 'legal',
+        },
+        {
+          title: 'Partnerships and nationwide projects',
+          body: 'Effexport, Traffic Devices and Writesys distribution; end-to-end installation and public and private tenders across the country.',
+          cta: 'Full information',
+          to: 'information',
+        },
+      ],
     },
     aboutUs: {
       seoTitle: 'Information - SAX Soluciones & Servicios',
@@ -603,9 +683,41 @@ We have the privilege of being the exclusive distributor of ADATILE (USA) and EF
       emailLabel: 'E-mail',
     },
     home: {
-      description: `Nous sommes une entreprise dédiée aux solutions et services dans différents domaines tels que: produits de signalisation, sécurité routière, Commercialisation ou vente de Lampes Led (Asie), équipements de bureau et machinerie lourde. Exportation et Commercialisation de Minéraux avec certificat d'enregistrement phytosanitaire; importation de produits d'origine végétale (grains), est émis par le senasag; SAX a des liens commerciaux sur tout le territoire bolivien. C'est pourquoi nous travaillons sur différents types de projets ainsi que sur des appels d'offres publics et privés au niveau national et international.
-
-Nous avons le privilège d'être le distributeur exclusif d'ADATILE (USA) et d'EFEXPORT ZF (Colombie) en matière de mobilier et d'équipement routier, pour diverses entreprises de caractère local, national et international.`,
+      seoTitle: 'SAX Bolivie — Signalisation routière et services',
+      seoDescription:
+        'Signalisation routière intégrale, produits certifiés et appui juridique en Bolivie. Technologies internationales conformes aux normes NB et au code de la route.',
+      heroEyebrow: 'SAX Bolivie',
+      heroTitle: 'SAX Soluciones & Servicios',
+      heroSubtitle:
+        'Nous associons les technologies de Colombie, des États-Unis et du Brésil au cadre bolivien : signalisation verticale et horizontale, équipements de sécurité routière et conseil juridique spécialisé INRA et marchés publics.',
+      heroCtaInformation: 'Informations sur l\'entreprise',
+      heroCtaProducts: 'Catalogue produits',
+      heroCtaLegal: 'Conseil juridique',
+      carouselTitle: 'Produits phares',
+      carouselSubtitle:
+        'Dispositifs pour chantiers, canalisation et signalisation temporaire ou permanente.',
+      carouselRegionLabel: 'Carrousel produits',
+      insightsSectionTitle: 'Normes, projets et accompagnement',
+      insightCards: [
+        {
+          title: 'Réglementation routière et normes NB',
+          body: 'Signalisation alignée sur la loi circulation et sécurité routière et sur les Normes techniques boliviennes (conception, visibilité, matériaux).',
+          cta: 'En savoir plus',
+          to: 'information',
+        },
+        {
+          title: 'Droit agraire, INRA et justice agro-environnementale',
+          body: 'Expérience en régularisation foncière, droit agraire et ressources naturelles, avec application des lois 1715 et 3545.',
+          cta: 'Espace juridique',
+          to: 'legal',
+        },
+        {
+          title: 'Partenariats et projets nationaux',
+          body: 'Distribution Effexport, Traffic Devices et Writesys ; installation complète et appels d\'offres publics et privés sur tout le territoire.',
+          cta: 'Informations complètes',
+          to: 'information',
+        },
+      ],
     },
     aboutUs: {
       seoTitle: 'Informations - SAX Soluciones & Servicios',

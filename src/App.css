@@ -13,7 +13,8 @@
   padding-top: 120px;
 }
 
-/* Información y Legal: sin hueco bajo el header; hero alineado con la franja del navbar */
+/* Home, Información y Legal: sin hueco bajo el header */
+.main-content:has(.home),
 .main-content:has(.information-page),
 .main-content:has(.legal-page) {
   padding-left: 0;
@@ -28,6 +29,7 @@
     padding-top: 96px;
   }
 
+  .main-content:has(.home),
   .main-content:has(.information-page),
   .main-content:has(.legal-page) {
     padding-left: 0;
